@@ -18,6 +18,7 @@ assumedRoleObject = sts.assume_role_with_web_identity(ROLE_ARN, "XX", oidc['Toke
 kinesis = boto.connect_kinesis(
     aws_access_key_id=assumedRoleObject.credentials.access_key,
     aws_secret_access_key=assumedRoleObject.credentials.secret_key,
-    security_token=assumedRoleObject.credentials.session_token)
+    security_token=assumedRoleObject.credentials.session_token
+)
 
 # kinesis.put_record()
