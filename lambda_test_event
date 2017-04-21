@@ -1,0 +1,20 @@
+{
+    "Records": [
+        {
+            "kinesis": {
+                "kinesisSchemaVersion": "1.0",
+                "partitionKey": "shardId-000000000000",
+                "sequenceNumber": "49572336744099976962501177078604529870351330958928510978",
+                "data": "eyJTb3VuZCI6ICIwLjM4NDI5ODM0MzY5NiIsICJXZWF0aGVyIjogIjAuOTU2ODQxNzQ2NzAxIiwgIlNwZWVkIjogIjAuNDUyNDE4Mzk1MDA3IiwgIlRyYWZmaWMgQ29uZGl0aW9uIjogIjAuODI4ODUxNTg0MzA5IiwgIkx1bWludWNpdHkiOiAiMC4xODQ2NjYyNjU5NzYifQ==",
+                "approximateArrivalTimestamp": 1492488528.553
+            },
+            "eventSource": "aws:kinesis",
+            "eventVersion": "1.0",
+            "eventID": "shardId-000000000000:49572336744099976962501177078604529870351330958928510978",
+            "eventName": "aws:kinesis:record",
+            "invokeIdentityArn": "arn:aws:iam::965479193052:role/service-role/mtaKinesis",
+            "awsRegion": "us-east-1",
+            "eventSourceARN": "arn:aws:kinesis:us-east-1:965479193052:stream/iCarRadio"
+        }
+    ]
+}

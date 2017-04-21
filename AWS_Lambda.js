@@ -1,45 +1,42 @@
-// If this file contains double-curly-braces, that's because
-// it is a template that has not been processed into JavaScript yet.
 console.log('Loading event');
-// "exports.handler" == Main Function: All Lambda code is inside (me)
 exports.handler = function(event, context) {
   var AWS = require('aws-sdk');
-  // var sns = new AWS.SNS();
+  var sns = new AWS.SNS();
   var ml = new AWS.MachineLearning();
   var endpointUrl = 'https://realtime.machinelearning.us-east-1.amazonaws.com';
   var mlModelId = 'ml-PHdo4dhpt9D';
-  // var snsTopicArn = 'arn:aws:sns:us-east-1:965479193052:actionableTweets';
-  // var snsMessageSubject = 'Respond to tweet';
-  // var snsMessagePrefix = 'ML model '+mlModelId+': Respond to this tweet: https://twitter.com/0/status/';
-  // var numMessagesProcessed = 0;
+  var snsTopicArn = 'arn:aws:sns:us-east-1:965479193052:iCarRadio';
+  var snsMessageSubject = 'AML Prediction Result';
   var numMessagesToBeProcessed = event.Records.length;
   console.log("Number of data points to be processed:"+numMessagesToBeProcessed);
+  var ml_result = {};
 
-  // var updateSns = function(tweetData) {
-  //   var params = {};
-  //   params['TopicArn'] = snsTopicArn;
-  //   params['Subject']  = snsMessageSubject;
-  //   params['Message']  = snsMessagePrefix+tweetData['sid'];
-  //   console.log('Calling Amazon SNS to publish.');
-  //   sns.publish(
-  //     params,
-  //     function(err, data) {
-  //       if (err) {
-  //         console.log(err, err.stack); // an error occurred
-  //         context.done(null, 'Failed when publishing to SNS');
-  //       }
-  //       else {
-  //         context.done(null, 'Published to SNS');
-  //       }
-  //     }
-  //     );
-  // }
+  var updateSns = function(result_data) {
+    var params = {};
+    params['TopicArn'] = snsTopicArn;
+    params['Subject']  = snsMessageSubject;
+    params['Message']  = result_data;
+    console.log('Calling Amazon SNS to publish.');
+    sns.publish(
+      params,
+      function(err, data) {
+        if (err) {
+          console.log(err, err.stack); // an error occurred
+          context.done(null, 'Failed when publishing to SNS');
+        }
+        else {
+          context.done(null, 'Published to SNS');
+        }
+      }
+      );
+  }
 
-  var callPredict = function(tweetData){
+  var callPredict = function(input){
     console.log('calling predict');
+    // AML MODEL #1
     ml.predict(
       {
-        Record : tweetData,
+        Record : input,
         PredictEndpoint : endpointUrl,
         MLModelId: mlModelId
       },
@@ -50,34 +47,52 @@ exports.handler = function(event, context) {
         }
         else {
           console.log('Predict call succeeded');
-          console.log(data.Predection);
-          if(data.Prediction.predictedLabel === '1'){
-            // updateSns(tweetData);
-          }
-          else{
-            context.done(null, "Predict result: 0");
-          }
+          ml_result['model 1'] = data.Prediction.predictedValue;
+          console.log(ml_result['model 1']);
         }
       }
       );
+      // AML MODEL #2
+      ml.predict(
+        {
+          Record : input,
+          PredictEndpoint : endpointUrl,
+          MLModelId: mlModelId
+        },
+        function(err, data) {
+          if (err) {
+            console.log(err);
+            context.done(null, 'Call to predict service failed.');
+          }
+          else {
+            console.log('Predict call succeeded');
+            console.log(data.Prediction['predictedValue']);
+            ml_result['model 2'] = data.Prediction['predictedValue'];
+            console.log(ml_result['model 2']);
+          }
+        }
+        );
+
+        updateSns(ml_result);
+
   }
 
-  var processRecords = function(){
-    for(i = 0; i < numMessagesToBeProcessed; ++i) {
-      encodedPayload = event.Records[i].kinesis.data;
-      // Amazon Kinesis data is base64 encoded so decode here
-      payload = new Buffer(encodedPayload, 'base64').toString('utf-8');
-      console.log("payload:"+payload);
-      try {
-        parsedPayload = JSON.parse(payload);
-        callPredict(parsedPayload);
+    var processRecords = function(){
+        for(i = 0; i < numMessagesToBeProcessed; ++i) {
+          encodedPayload = event.Records[i].kinesis.data;
+          // Amazon Kinesis data is base64 encoded so decode here
+          payload = new Buffer(encodedPayload, 'base64').toString('utf-8');
+          console.log("payload:"+payload);
+          try {
+            parsedPayload = JSON.parse(payload);
+            callPredict(parsedPayload);
+          }
+          catch (err) {
+            console.log(err, err.stack);
+            context.done(null, "failed payload"+payload);
+          }
+        }
       }
-      catch (err) {
-        console.log(err, err.stack);
-        context.done(null, "failed payload"+payload);
-      }
-    }
-  }
 
   var checkRealtimeEndpoint = function(err, data){
       // Check ML Model's Realtime Endpoint,

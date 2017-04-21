@@ -1,0 +1,28 @@
+{
+  "version" : "1.0",
+  "rowId" : null,
+  "rowWeight" : null,
+  "targetAttributeName" : "output",
+  "dataFormat" : "CSV",
+  "dataFileContainsHeader" : true,
+  "attributes" : [ {
+    "attributeName" : "Sound",
+    "attributeType" : "NUMERIC"
+  }, {
+    "attributeName" : "Weather",
+    "attributeType" : "NUMERIC"
+  }, {
+    "attributeName" : "Traffic Condition",
+    "attributeType" : "NUMERIC"
+  }, {
+    "attributeName" : "Speed",
+    "attributeType" : "NUMERIC"
+  }, {
+    "attributeName" : "Luminucity",
+    "attributeType" : "NUMERIC"
+  }, {
+    "attributeName" : "output",
+    "attributeType" : "NUMERIC"
+  } ],
+  "excludedAttributeNames" : [ ]
+}
