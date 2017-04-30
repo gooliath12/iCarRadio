@@ -2,9 +2,23 @@ import csv
 import os.path
 from random import *
 
+# Optional music factors
+# 1. energy
+# 2. acousticness
+# 3. danceability
+# 4. valence
 OBJ_FACTOR = 'music_factor'
+
+# Optional Time of Day
+# 1. morning
+# 2. midday
+# 3. off work
+# 4. night
+# 5. midnight
+TOD = 'morning'
+
 FILE_NAME = OBJ_FACTOR + '.csv'
-ATTRS = ['Sound', 'Weather', 'Traffic', 'Speed', 'Luminucity', OBJ_FACTOR]
+ATTRS = [TOD, 'Weather', 'Traffic', 'Speed', 'Luminucity', OBJ_FACTOR]
 
 if os.path.isfile(FILE_NAME):
     print "Detected %s" %(FILE_NAME)
@@ -26,20 +40,18 @@ try:
         #   1. random(): A random number in [0,1)
         #   2. randrange(a,b): A random number in [a,b)
         #   3. randint(a,b): A random integer in [a,b]
-        sound =  random()
-        weather = random()
-        traffic = random()
-        speed = random()
-        luminous = random()
-        output = input("[Data #%d]\n%s:%f  %s:%f  %s:%f  %s:%f  %s:%f \n Type your prediction of %s (value should be an integer in [0,100]) "
-                        %(ctr, ATTRS[0], sound, ATTRS[1], weather,
-                        ATTRS[2], traffic, ATTRS[3], speed,
-                        ATTRS[4], luminous, OBJ_FACTOR)
+        # sound =  random()
+        weather = randint(-1, 1)
+        traffic = uniform(0, 10)
+        speed = uniform(0, 140)
+        luminous = randint(0,10)
+        output = input("[Data #%d]\n%s:%d  %s:%f  %s:%f  %s:%d \n Type your prediction of %s (value should be an integer in [0,100])"
+                        %(ctr, ATTRS[1], weather, ATTRS[2], traffic, ATTRS[3], speed, ATTRS[4], luminous, OBJ_FACTOR)
                     )
         if not isinstance(output, int) or output < 0 or output > 100:
             print "Invalid format, try again."
             continue
-        data = [sound, weather, traffic, speed, luminous, output/100.0]
+        data = [TOD, weather, traffic, speed, luminous, output/100.0]
         writer.writerow(data)
         ctr += 1
         print '\n'

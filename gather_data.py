@@ -17,6 +17,7 @@ weather = weather.weather([lan,lon])
 traffic = traffic.traffic()
 luminous = light_sensor.get_light()
 
+# Generate .JSON file
 data = {
     "Sound": str(sound),
     "Weather": str(weather),
@@ -24,5 +25,6 @@ data = {
     "Speed": str(speed),
     "Luminucity": str(luminous)
 }
-# print json.dumps(data, indent=4, sort_keys=True)
-kinesis.put_record(KINESIS_STREAM_NAME, json.dumps(data), 'shardId-000000000000')
+
+print json.dumps(data, indent=4, sort_keys=True)
+# kinesis.put_record(KINESIS_STREAM_NAME, json.dumps(data), 'shardId-000000000000')
