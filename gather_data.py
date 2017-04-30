@@ -9,9 +9,12 @@ KINESIS_STREAM_NAME = 'iCarRadio'
 # Generate Random data for test purpose
 from random import *
 sound =  random()
-weather = weather.weather()
+gpsdatas=gps.getgps()
+lan=gpsdatas[0]
+lon=gpsdatas[1]
+speed=gpsdata[2]
+weather = weather.weather([lan,lon])
 traffic = traffic.traffic()
-speed = random()
 luminous = light_sensor.get_light()
 
 data = {
