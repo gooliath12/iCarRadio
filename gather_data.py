@@ -1,6 +1,6 @@
 import boto, json
 from conn_aws import kinesis
-
+import light_sensor,traffic, weather
 
 KINESIS_STREAM_NAME = 'iCarRadio'
 # kinesis.put_record("as3",json.dumps(t),'0')
@@ -9,10 +9,10 @@ KINESIS_STREAM_NAME = 'iCarRadio'
 # Generate Random data for test purpose
 from random import *
 sound =  random()
-weather = random()
-traffic = random()
+weather = weather.weather()
+traffic = traffic.traffic()
 speed = random()
-luminous = random()
+luminous = light_sensor.get_light()
 
 data = {
     "Sound": str(sound),
