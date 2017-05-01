@@ -55,11 +55,11 @@ try:
         # sound =  random()
         weather = randint(-1, 1)
         traffic = uniform(0, 10)
-        limit = 80 if random()<0.5 else 120
+        limit = 80 if random()<0.5 else 125
         speed = compute_speed(traffic, limit)
         luminous = randint(0,10)
-        output = input("[Data #%d]\n%s:%d  %s:%f  %s:%f  %s:%d \n Type your prediction of %s (value should be an integer in [0,100])"
-                        %(ctr, ATTRS[1], weather, ATTRS[2], traffic, ATTRS[3], speed, ATTRS[4], luminous, OBJ_FACTOR)
+        output = input("[Data #%d]\n%s:%d  %s:%f  speed limit:%dkm/h  %s:%f  %s:%d \n Type your prediction of %s (value should be an integer in [0,100])"
+                        %(ctr, ATTRS[1], weather, ATTRS[2], traffic, limit, ATTRS[3], speed, ATTRS[4], luminous, OBJ_FACTOR)
                     )
         if not isinstance(output, int) or output < 0 or output > 100:
             print "Invalid format, try again."
