@@ -1,6 +1,6 @@
 import boto, json
 from conn_aws import kinesis
-# import light_sensor,traffic, weather
+# import light_sensor,traffic, weather,gprmc
 
 KINESIS_STREAM_NAME = 'iCarRadio'
 # kinesis.put_record("as3",json.dumps(t),'0')
@@ -9,7 +9,7 @@ KINESIS_STREAM_NAME = 'iCarRadio'
 # Generate Random data for test purpose
 from random import *
 # sound =  random()
-# gpsdatas=gps.getgps()
+# gpsdatas=gprmc.getGPS()
 # lan=gpsdatas[0]
 # lon=gpsdatas[1]
 # speed=gpsdata[2]
