@@ -1,6 +1,8 @@
 import flask
 from flask import Flask, request, render_template, jsonify
 import requests, json, time
+from get_recommendation import rec
+
 # import sys
 # sys.path.append('functions/')   # Path to module "es_to_server.py"
 application = Flask(__name__)
@@ -39,8 +41,12 @@ def sns():
 
     if hdr == 'Notification':
         print "[FLASK] Received data from AWS."
-        added_ts = json.loads(js['Message'])
-        print json.dumps(added_ts, indent=4, sort_keys=True)
+        ml_result = json.loads(js['Message'])
+        print json.dumps(ml_result, indent=4)
+
+        # Recommend songs using Spotify API
+        rec(energy=ml_result['energy'], acousticness=ml_result['acousticness'],
+            danceability=ml_result['danceability'], valence=ml_result['valence'])
     return 'OK\n'
 
 

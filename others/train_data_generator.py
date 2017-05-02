@@ -18,7 +18,7 @@ OBJ_FACTOR = 'music_factor'
 TOD = 'morning'
 
 FILE_NAME = OBJ_FACTOR + '.csv'
-ATTRS = [TOD, 'Weather', 'Traffic', 'Speed', 'Luminucity', OBJ_FACTOR]
+ATTRS = ['Time of Day', 'Weather', 'Traffic', 'Speed', 'Luminucity', OBJ_FACTOR]
 
 
 def compute_speed(traffic, limit):

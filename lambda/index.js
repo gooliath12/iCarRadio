@@ -1,12 +1,24 @@
 exports.handler = function(event, context) {
-//   console.log(JSON.stringify(ml_result));
+  console.log(JSON.stringify(event));
 
   var AWS = require('aws-sdk');
   var async = require('async');
   var sns = new AWS.SNS();
   var ml = new AWS.MachineLearning();
-  var endpointUrl = 'https://realtime.machinelearning.us-east-1.amazonaws.com';
-  var mlModelId = 'ml-PHdo4dhpt9D';
+
+  // ML Model 1:  energy
+  var endpointUrl_1 = 'https://realtime.machinelearning.us-east-1.amazonaws.com';
+  var mlModelId_1 = 'ml-icciKHp2qJo';
+  // ML Model 2: acousticness
+  var endpointUrl_2 = 'https://realtime.machinelearning.us-east-1.amazonaws.com';
+  var mlModelId_2 = 'ml-bFTiZ7ySeYr';
+  // ML Model 3: danceability
+  var endpointUrl_3 = 'https://realtime.machinelearning.us-east-1.amazonaws.com';
+  var mlModelId_3 = 'ml-x9UMZPzKLHi';
+  // ML Model 4: valence
+  var endpointUrl_4 = 'https://realtime.machinelearning.us-east-1.amazonaws.com';
+  var mlModelId_4 = 'ml-Q6hI5WdPaQM';
+  
   var snsTopicArn = 'arn:aws:sns:us-east-1:965479193052:iCarRadio';
   var snsMessageSubject = 'AML Prediction Result';
   var numMessagesToBeProcessed = event.Records.length;
@@ -48,8 +60,8 @@ exports.handler = function(event, context) {
             ml.predict(
               {
                 Record : input,
-                PredictEndpoint : endpointUrl,
-                MLModelId: mlModelId
+                PredictEndpoint : endpointUrl_1,
+                MLModelId: mlModelId_1
               },
               function(err, data) {
                 console.log('1st function ML callback');
@@ -59,14 +71,14 @@ exports.handler = function(event, context) {
                 }
                 else {
                   console.log('Predict call succeeded');
-                  ml_result['model 1'] = data.Prediction.predictedValue;
-                  console.log(ml_result['model 1']);
+                  ml_result['energy'] = data.Prediction.predictedValue;
+                  console.log(ml_result['energy']);
                 }
-                done(null, ml_result['model 1']);
+                done(null, ml_result['energy']);
               }
               );
-            console.log("1st function finished.")
-            // done(null, ml_result['model 1']);
+            console.log("1st function finished.");
+            // done(null, ml_result['energy']);
         },
           // AML MODEL #2
           function second(done) {
@@ -74,8 +86,8 @@ exports.handler = function(event, context) {
                 ml.predict(
                     {
                       Record : input,
-                      PredictEndpoint : endpointUrl,
-                      MLModelId: mlModelId
+                      PredictEndpoint : endpointUrl_2,
+                      MLModelId: mlModelId_2
                     },
                     function(err, data) {
                       console.log("2nd function ML callback");
@@ -85,17 +97,71 @@ exports.handler = function(event, context) {
                       }
                       else {
                         console.log('Predict call succeeded');
-                        ml_result['model 2'] = data.Prediction['predictedValue'];
-                        console.log(ml_result['model 2']);
+                        ml_result['acousticness'] = data.Prediction['predictedValue'];
+                        console.log(ml_result['acousticness']);
                       }
-                      done(null, ml_result['model 2']);
+                      done(null, ml_result['acousticness']);
                     }
                 );
                 console.log('2nd function finished.');
-                // done(null, ml_result['model 2']);
+                // done(null, ml_result['acousticness']);
           },
-
-        function third(done) {
+          
+        // AML MODEL #3
+          function third(done) {
+                console.log('3rd function');
+                ml.predict(
+                    {
+                      Record : input,
+                      PredictEndpoint : endpointUrl_3,
+                      MLModelId: mlModelId_3
+                    },
+                    function(err, data) {
+                      console.log("3rd function ML callback");
+                      if (err) {
+                        console.log(err);
+                        context.done(null, 'Call to predict service failed.');
+                      }
+                      else {
+                        console.log('Predict call succeeded');
+                        ml_result['danceability'] = data.Prediction['predictedValue'];
+                        console.log(ml_result['danceability']);
+                      }
+                      done(null, ml_result['danceability']);
+                    }
+                );
+                console.log('3rd function finished.');
+                // done(null, ml_result['danceability']);
+          },
+          
+        // AML MODEL #4
+          function fourth(done) {
+                console.log('4th function');
+                ml.predict(
+                    {
+                      Record : input,
+                      PredictEndpoint : endpointUrl_4,
+                      MLModelId: mlModelId_4
+                    },
+                    function(err, data) {
+                      console.log("4th function ML callback");
+                      if (err) {
+                        console.log(err);
+                        context.done(null, 'Call to predict service failed.');
+                      }
+                      else {
+                        console.log('Predict call succeeded');
+                        ml_result['valence'] = data.Prediction['predictedValue'];
+                        console.log(ml_result['valence']);
+                      }
+                      done(null, ml_result['valence']);
+                    }
+                );
+                console.log('4th function finished.');
+                // done(null, ml_result['valence']);
+          },
+        
+        function fifth(done) {
             var params = {};
             params['TopicArn'] = snsTopicArn;
             params['Subject']  = snsMessageSubject;
@@ -162,5 +228,5 @@ exports.handler = function(event, context) {
     }
   }
 
-  ml.getMLModel({MLModelId:mlModelId}, checkRealtimeEndpoint);
+  ml.getMLModel({MLModelId:mlModelId_1}, checkRealtimeEndpoint);
 };
