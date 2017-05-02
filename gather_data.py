@@ -1,6 +1,6 @@
 import boto, json
 from conn_aws import kinesis
-# import light_sensor,traffic, weather,gprmc
+import lightSensor,trafficAPI, weatherAPI,gprmc
 
 KINESIS_STREAM_NAME = 'iCarRadio'
 # kinesis.put_record("as3",json.dumps(t),'0')
@@ -9,30 +9,29 @@ KINESIS_STREAM_NAME = 'iCarRadio'
 # Generate Random data for test purpose
 from random import *
 
-"""
 # uncomment if using sensor data
 
 # get data from sensors
 gpsdatas=gprmc.getGPS()
 lan=gpsdatas[0]
 lon=gpsdatas[1]
-speed=gpsdata[2]
-weather = weather.weather([lan,lon])
-traffic = traffic.traffic()
-luminous = light_sensor.get_light()
+speed=gpsdatas[2]
+#weather = weatherAPI.weather([lan,lon])
+weather=0
+traffic = trafficAPI.getTraffic()
+luminous = lightSensor.getLight()
 
 # check reasonable data range
-while(not (-90<=lan<=90 and -180<=lon<=180 and 0=<speed<=140 0<=weather<=1 and 0<=traffic<=10 and 0<=luminous<=10)):
+while(not (-90<=lan<=90 and -180<=lon<=180 and 0<=speed<=140 and 0<=weather<=1 and 0<=traffic<=10 and 0<=luminous<=10)):
     gpsdatas=gprmc.getGPS()
     lan=gpsdatas[0]
     lon=gpsdatas[1]
-    speed=gpsdata[2]
-    weather = weather.weather([lan,lon])
-    traffic = traffic.traffic()
-    luminous = light_sensor.get_light()
+    speed=gpsdatas[2]
+    #weather = weatherAPI.weather([lan,lon])
+    traffic = trafficAPI.getTraffic()
+    luminous = lightSensor.getLight()
 
-"""
-    
+"""    
 
 # Test Data
 tod = 'morning'
@@ -41,6 +40,8 @@ traffic = 5.0
 speed = 80
 luminous = 5
 
+"""
+tod = 'morning'
 
 # Generate .JSON file
 data = {
