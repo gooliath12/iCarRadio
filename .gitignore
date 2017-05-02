@@ -1,2 +1,5 @@
 test/
+utils/
 utils/aws_identity.txt
+utils/aws_key.txt
+utils/spotify_api.txt
