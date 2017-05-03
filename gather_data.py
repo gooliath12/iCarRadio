@@ -36,7 +36,7 @@ while(not (-90<=lan<=90 and -180<=lon<=180 and 0<=speed<=140 and 0<=weather<=1 a
 # Test Data
 tod = 'morning'
 weather = 1
-traffic = 5.0
+traffic = 1
 speed = 80
 luminous = 5
 
