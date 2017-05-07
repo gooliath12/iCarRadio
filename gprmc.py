@@ -3,7 +3,7 @@ import mraa
 def getGPS():  
     u = mraa.Uart(0)  
     u.setBaudRate(9600)  
-    print u.getDevicePath()  
+    #print u.getDevicePath()  
     status="V" 
     while (status!="A"):  
       if(u.dataAvailable()):  
