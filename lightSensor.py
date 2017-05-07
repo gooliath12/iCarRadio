@@ -18,8 +18,8 @@ def getLight():
     pwm.enable(True)    # enable PWM
     pwm.write(0)
     return light.value()
-    ambientLight = light.value()
     """
+    ambientLight = light.value()
     tempLight = ambientLight
     if tempLight > MAX_LIGHT:
         tempLight = MAX_LIGHT      # Nromalize the value
@@ -40,4 +40,4 @@ def getLight():
     #return pwmValue
     time.sleep(1) 
     """
-//print getLight()
+#print getLight()

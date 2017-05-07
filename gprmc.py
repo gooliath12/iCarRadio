@@ -14,6 +14,8 @@ def getGPS():
                splitbuff=trimbuff.strip().split(',')
                #print trimbuff
                #print splitbuff
+               if(len(splitbuff)<8):
+                   continue
                status=splitbuff[2]
                latnmea=splitbuff[3]
                latdir=splitbuff[4]

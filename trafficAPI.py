@@ -1,7 +1,7 @@
 import requests
 import json
 
-def traffic(coordinates=['40.7128, -74.0059,1']):
+def getTraffic(coordinates=['40.7128, -74.0059,1']):
     r = requests.request('get', 'https://traffic.cit.api.here.com/traffic/6.1/flow.json',
                         params={'app_id':['vbmECPJZjFd55Qjd2JhU'],
                         'app_code': ['V17J9DdXQTuSDAWiFyH2vg'],
