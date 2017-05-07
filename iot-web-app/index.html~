@@ -1,0 +1,38 @@
+<!DOCTYPE 'html'>
+<html>
+	<head>
+		<title>Data</title>
+	</head>
+	<body> <h2>Data:</h2>
+		<div>Light: <%= light_data %></div>
+		<div>Speed: <%= speed%></div>
+		<div>Traffic: <%= traffic%></div>
+		<h2>Weather</h2>
+		Weather: <%= weather%>
+		<!-- determine weather icon-->
+		<% if(weather==-1){ %>
+			<img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/128/Status-weather-showers-scattered-icon.png" alt="Weather" width="128" height="128">
+			<%} else if(weather==0){ %>
+			<img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/128/Status-weather-clouds-icon.png" alt="Weather" width="128" hegith="128">
+			<% } else{%>
+			<img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/128/Status-weather-clear-icon.png" alt="Weather" width="128" hegith="128">
+			<%}%>
+		<h2> Google Map</h2>
+		<div>Lon: <%= lon%></div>
+		<div>Lat: <%= lat%></div>
+		<div id="map" style="width:400px;height:400px;background:blue"></div>
+		<script>
+		function myMap() {
+			var mapOptions = {
+				//center: new google.maps.LatLng(55,55),
+				center: new google.maps.LatLng(<%= lat%>, <%= lon%>),
+				zoom:10,
+				mapTypeId: google.maps.MapTypeId.HYBRID
+			}
+			var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+		}
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0rKJi3ci4W2XXTIEvjrhyddQpZrGsJQE&callback=myMap"></script>
+	</body>
+</html>
+
