@@ -76,16 +76,21 @@ var http = require("http") ;
 var fs = require('fs');
 var ejs = require('ejs');
 
+function wait(){
+	console.log('The process is waiting');
+}
+
 fs.readFile('./index.html','utf-8', function (err, content){                            
     if(err){                                                              
         throw err;                                                    
     }
   
     http.createServer(function(req, res){
-        var dataRead = getSensorData();
+       
+	//var py = spawn('python',["./t.py"]);
+	var dataRead = getSensorData();
 	res.writeHead(200,{"Content-Type": "text/html"});                              
 	//res.write(html);                                                         
-        //res.write(dataRead["light"].toString());
 	var light_data=dataRead["light"];
 	var weather = dataRead["weather"];
 	var traffic = dataRead["traffic"];
@@ -94,28 +99,26 @@ fs.readFile('./index.html','utf-8', function (err, content){
 	var lat=dataRead["lat"];
         var renderedHtml = ejs.render(content, {speed:speed,light_data:light_data,weather:weather,traffic:traffic,lon:lon,lat:lat});
 	res.end(renderedHtml);
+	serverReqCount+=1;
     }).listen(1337);
 });
 
-
-
+//var python_path="../../iCarRadio/gather_data.py"
 var spawn = require("child_process").spawn;
 var py = spawn('python',["./t.py"]);
+//var py = spawn('python',["../../iCarRadio/gather_data2.py"]);
 var dataString='';
 
 var serverReqCount = 0 ;
-function requestServer(req, res) {
-    var dataRead = getSensorData() ;
-    //res.writeHead(200, { "Content-Type":"text/json" }) ;
-    //res.write(JSON.stringify(dataRead)) ;
-    //res.end() ;
-    //console.log(JSON.stringify(dataRead)) ;
-   res.writeHead(200,{"Content-Type": "text/html"});
-    response.write(html);
-   res.end();
-   serverReqCount++ ;
-}
 
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
 // this callback is triggered when the server is listening
 
 //server.listen(ipPort, ipAddress, function() {
@@ -135,18 +138,19 @@ function requestServer(req, res) {
  *
  * @return {Object} - our "fake" sensor data
  */
-
 function getSensorData() {
-    var py = spawn('python',["./t.py"]);
+    var py = spawn('python',["../../iCarRadio/gather_data2.py"]);
+    //var py = spawn('python',["./t.py"])
+    sleep(1000);
     py.stdout.on('data', function (data){                                             
         dataString=data.toString();                                               
-    });	
- //var dataString='';
+    });
+	
     var currTime = Date.now() ;
     var datas=dataString.slice(1,-2);
     var arr=datas.split(",").map(Number);
+    console.log(dataString);
     return {light:arr[0],weather:arr[1],traffic:arr[2],speed:arr[3],lat:arr[4],lon:arr[5],currentTime:currTime } ;
-    //return arr;
 }
 
 
