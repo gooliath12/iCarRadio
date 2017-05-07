@@ -18,8 +18,9 @@ OBJ_FACTOR = 'music_factor'
 TOD = 'morning'
 
 FILE_NAME = OBJ_FACTOR + '.csv'
-ATTRS = ['Time of Day', 'Weather', 'Traffic', 'Speed', 'Luminucity', OBJ_FACTOR]
-
+# ATTRS = ['Time of Day', 'Weather', 'Traffic', 'Speed', 'Luminucity', OBJ_FACTOR]
+ATTRS = ['Time of Day', 'Weather', 'Traffic', 'Speed', 'Luminucity', 'Genre', 'Energy', 'Valence', 'Acousticness']
+TODS = ['morning', 'mid-day', 'off-work', 'night', 'midnight']
 
 def compute_speed(traffic, limit):
     """
@@ -47,27 +48,35 @@ ctr = 0
 print "Start generating training data..."
 
 try:
-    while True:
+    # while True:
+    for i in range(200):
         # Ways to generate random number:
         #   1. random(): A random number in [0,1)
         #   2. randrange(a,b): A random number in [a,b)
         #   3. randint(a,b): A random integer in [a,b]
         # sound =  random()
+        
         weather = randint(-1, 1)
         traffic = uniform(0, 10)
         limit = 80 if random()<0.5 else 125
         speed = compute_speed(traffic, limit)
         luminous = randint(0,10)
-        output = input("[Data #%d]\n%s:%d  %s:%f  speed limit:%dkm/h  %s:%f  %s:%d \n Type your prediction of %s (value should be an integer in [0,100])"
-                        %(ctr, ATTRS[1], weather, ATTRS[2], traffic, limit, ATTRS[3], speed, ATTRS[4], luminous, OBJ_FACTOR)
-                    )
-        if not isinstance(output, int) or output < 0 or output > 100:
-            print "Invalid format, try again."
-            continue
-        data = [TOD, weather, traffic, speed, luminous, output/100.0]
+        tod = TODS[randint(0,4)]
+        # output = input("[Data #%d]\n%s:%d  %s:%f  speed limit:%dkm/h  %s:%f  %s:%d \n Type your prediction of %s (value should be an integer in [0,100])"
+        #                 %(ctr, ATTRS[1], weather, ATTRS[2], traffic, limit, ATTRS[3], speed, ATTRS[4], luminous, OBJ_FACTOR)
+        #             )
+        # if not isinstance(output, int) or output < 0 or output > 100:
+        #     print "Invalid format, try again."
+        #     continue
+        # data = [TOD, weather, traffic, speed, luminous, output/100.0]
+        data = [tod, weather, traffic, speed, luminous]
         writer.writerow(data)
         ctr += 1
-        print '\n'
+        # print '\n'
+    f.close()
+    print "Finished!"
 except KeyboardInterrupt:
     f.close()
     print "\nExiting the program..."
+
+

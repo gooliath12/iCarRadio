@@ -8,16 +8,16 @@ exports.handler = function(event, context) {
 
   // ML Model 1:  energy
   var endpointUrl_1 = 'https://realtime.machinelearning.us-east-1.amazonaws.com';
-  var mlModelId_1 = 'ml-icciKHp2qJo';
+  var mlModelId_1 = 'ml-R7gmht1112F';
   // ML Model 2: acousticness
   var endpointUrl_2 = 'https://realtime.machinelearning.us-east-1.amazonaws.com';
-  var mlModelId_2 = 'ml-bFTiZ7ySeYr';
-  // ML Model 3: danceability
+  var mlModelId_2 = 'ml-4jKUIZeY5iu';
+  // ML Model 3: genre
   var endpointUrl_3 = 'https://realtime.machinelearning.us-east-1.amazonaws.com';
-  var mlModelId_3 = 'ml-x9UMZPzKLHi';
+  var mlModelId_3 = 'ml-HU3pO2ZMbOD';
   // ML Model 4: valence
   var endpointUrl_4 = 'https://realtime.machinelearning.us-east-1.amazonaws.com';
-  var mlModelId_4 = 'ml-Q6hI5WdPaQM';
+  var mlModelId_4 = 'ml-7VEoNtBhFyY';
   
   var snsTopicArn = 'arn:aws:sns:us-east-1:965479193052:iCarRadio';
   var snsMessageSubject = 'AML Prediction Result';
@@ -54,7 +54,7 @@ exports.handler = function(event, context) {
   var callPredict = function(input){
     console.log('calling predict');
     async.series([
-        // AML MODEL #1
+        // AML MODEL #1 -- Acousticness
         function first(done) {
             console.log('1st function');
             ml.predict(
@@ -72,6 +72,12 @@ exports.handler = function(event, context) {
                 else {
                   console.log('Predict call succeeded');
                   ml_result['energy'] = data.Prediction.predictedValue;
+                  if (ml_result['energy'] > 0.9999) {
+                    ml_result['energy'] = 0.9999;
+                  }
+                  if (ml_result['energy'] < 0.0001) {
+                    ml_result['energy'] = 0.0001;
+                  }
                   console.log(ml_result['energy']);
                 }
                 done(null, ml_result['energy']);
@@ -80,7 +86,7 @@ exports.handler = function(event, context) {
             console.log("1st function finished.");
             // done(null, ml_result['energy']);
         },
-          // AML MODEL #2
+          // AML MODEL #2 -- Energy
           function second(done) {
                 console.log('2nd function');
                 ml.predict(
@@ -98,6 +104,12 @@ exports.handler = function(event, context) {
                       else {
                         console.log('Predict call succeeded');
                         ml_result['acousticness'] = data.Prediction['predictedValue'];
+                        if (ml_result['acousticness'] > 0.9999) {
+                          ml_result['acousticness'] = 0.9999;
+                          }
+                        if (ml_result['acousticness'] < 0.0001) {
+                          ml_result['acousticness'] = 0.0001;
+                          }
                         console.log(ml_result['acousticness']);
                       }
                       done(null, ml_result['acousticness']);
@@ -107,7 +119,7 @@ exports.handler = function(event, context) {
                 // done(null, ml_result['acousticness']);
           },
           
-        // AML MODEL #3
+        // AML MODEL #3 -- Genre
           function third(done) {
                 console.log('3rd function');
                 ml.predict(
@@ -124,17 +136,18 @@ exports.handler = function(event, context) {
                       }
                       else {
                         console.log('Predict call succeeded');
-                        ml_result['danceability'] = data.Prediction['predictedValue'];
-                        console.log(ml_result['danceability']);
+                        // ml_result['genre'] = data.Prediction['predictedValue'];
+                        ml_result['genre'] = data.Prediction['predictedLabel']
+                        console.log(ml_result['genre']);
                       }
-                      done(null, ml_result['danceability']);
+                      done(null, ml_result['genre']);
                     }
                 );
                 console.log('3rd function finished.');
                 // done(null, ml_result['danceability']);
           },
           
-        // AML MODEL #4
+        // AML MODEL #4 -- Valence
           function fourth(done) {
                 console.log('4th function');
                 ml.predict(
@@ -152,6 +165,12 @@ exports.handler = function(event, context) {
                       else {
                         console.log('Predict call succeeded');
                         ml_result['valence'] = data.Prediction['predictedValue'];
+                        if (ml_result['valence'] > 0.9999) {
+                          ml_result['valence'] = 0.9999;
+                        }
+                        if (ml_result['valence'] < 0.0001) {
+                          ml_result['valence'] = 0.0001;
+                        }
                         console.log(ml_result['valence']);
                       }
                       done(null, ml_result['valence']);

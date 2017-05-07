@@ -46,7 +46,7 @@ def sns():
 
         # Recommend songs using Spotify API
         rec(energy=ml_result['energy'], acousticness=ml_result['acousticness'],
-            danceability=ml_result['danceability'], valence=ml_result['valence'])
+            genres=[ml_result['genre']], valence=ml_result['valence'])
     return 'OK\n'
 
 

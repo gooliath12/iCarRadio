@@ -26,7 +26,7 @@
   } ],
   "excludedAttributeNames" : [ ]
 }
-genres = ["acoustic", "chill", "club", "dance", "dancehall", "happy", "holidays", "party", "rainy-day", "road-trip", "romance", "sad", "sleep", "study", "summer", "work-out"]
+genres = ["acoustic", "chill", "club", "dancehall", "happy", "holidays", "party", "rainy-day", "road-trip", "romance", "sad", "sleep", "study", "summer", "work-out"]
 {
   "genres" : [
      "acoustic",  ***********

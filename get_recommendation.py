@@ -7,7 +7,7 @@ import sys
 import spotipy.util as util
 
 def rec(username = 'jamesguo1112', energy=0.5,acousticness=0.5,
-       danceability=0.5, valence=0.5, genres=[], PL='iCarRadio'):
+       valence=0.5, genres=[], PL='iCarRadio'):
     """
     PL: playlist name
     """
@@ -23,13 +23,12 @@ def rec(username = 'jamesguo1112', energy=0.5,acousticness=0.5,
     if token:
         sp = spotipy.Spotify(auth=token)
         sp.trace = False 
-        # tracks = sp.recommendations(seed_genres=['study', 'dance', 'party', 'work-out', 'sleep'], 
-        #                             target_energy=energy,
-        #                             target_acousticness=acousticness,
-        #                             target_danceability=danceability,
-        #                             target_valence=valence,
-        #                             limit=3)
-        tracks = sp.recommendations(seed_genres=genres, limit=20) #target_acousticness=acousticness)
+        tracks = sp.recommendations(seed_genres=genres,
+                                    target_energy=energy,
+                                    target_acousticness=acousticness,
+                                    target_valence=valence,
+                                    limit=3)
+        # tracks = sp.recommendations(seed_genres=genres, limit=20) #target_acousticness=acousticness)
         track_ids = []
         for t in tracks['tracks']:
             track_ids.append(t['id'])
