@@ -39,9 +39,21 @@ des = {'morning_clouds': '1', 'passing_clouds': '1', 'tstorms_late': '-1', 'scat
        'thunderstorms': '-1'}
 
 
-def weather(city='New York'):
+def weather(p=['40.7128, -74.0059']):
+    r_c = requests.request('get', 'https://reverse.geocoder.cit.api.here.com/6.2/reversegeocode.json',
+                           params={'app_id': ['vbmECPJZjFd55Qjd2JhU'],
+                                   'app_code': ['V17J9DdXQTuSDAWiFyH2vg'],
+                                   'prox': p,
+                                   'mode': ['retrieveLandmarks'],
+                                   'gen': ['8']}
+                           )
+
+    res_c = json.loads(r_c.text)
+    city = str(res_c['Response']['View'][0]['Result'][0]['Location']['Address']['City'])
+
     r = requests.request('get', 'https://weather.cit.api.here.com/weather/1.0/report.json',
-                        params={'app_id':['DemoAppId01082013GAL'], 'app_code': ['AJKnXv84fjrb0KIHawS0Tg'],
+                        params={'app_id': ['vbmECPJZjFd55Qjd2JhU'],
+                                   'app_code': ['V17J9DdXQTuSDAWiFyH2vg'],
                         'product': ['observation'], 'name': city}
                         )
     icon = None
@@ -56,3 +68,4 @@ def weather(city='New York'):
             return None
     else:
         return None
+
