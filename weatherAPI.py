@@ -58,6 +58,7 @@ def weather(p=['40.7128, -74.0059']):
                         )
     icon = None
     text = json.loads(r.text)
+    print json.dumps(text, indent=4)
     for i in range(len(text['observations']['location'])):
         if text['observations']['location'][i]['observation'][0]['city'] == city:
             icon = text['observations']['location'][i]['observation'][0]['iconName']
@@ -68,4 +69,7 @@ def weather(p=['40.7128, -74.0059']):
             return None
     else:
         return None
+
+if __name__ == '__main__':
+    weather()
 

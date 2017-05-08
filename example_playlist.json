@@ -1,0 +1,452 @@
+{
+  "collaborative" : false,
+  "description" : null,
+  "external_urls" : {
+    "spotify" : "http://open.spotify.com/user/jamesguo1112/playlist/3Vo5SI8JSKJwQh5erjbMLB"
+  },
+  "followers" : {
+    "href" : null,
+    "total" : 0
+  },
+  "href" : "https://api.spotify.com/v1/users/jamesguo1112/playlists/3Vo5SI8JSKJwQh5erjbMLB",
+  "id" : "3Vo5SI8JSKJwQh5erjbMLB",
+  "images" : [ {
+    "height" : 640,
+    "url" : "https://mosaic.scdn.co/640/555bb9cac021e031400ab9a4b23318062ed4fabcdcca323886a858475773bcbc1b11580c7a9dfbeb290478003c392bf54ad017ac14d1043b13c2520345d2c40976ad1a5948ac023edd07274434d9e725",
+    "width" : 640
+  }, {
+    "height" : 300,
+    "url" : "https://mosaic.scdn.co/300/555bb9cac021e031400ab9a4b23318062ed4fabcdcca323886a858475773bcbc1b11580c7a9dfbeb290478003c392bf54ad017ac14d1043b13c2520345d2c40976ad1a5948ac023edd07274434d9e725",
+    "width" : 300
+  }, {
+    "height" : 60,
+    "url" : "https://mosaic.scdn.co/60/555bb9cac021e031400ab9a4b23318062ed4fabcdcca323886a858475773bcbc1b11580c7a9dfbeb290478003c392bf54ad017ac14d1043b13c2520345d2c40976ad1a5948ac023edd07274434d9e725",
+    "width" : 60
+  } ],
+  "name" : "iCarRadio",
+  "owner" : {
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/jamesguo1112"
+    },
+    "href" : "https://api.spotify.com/v1/users/jamesguo1112",
+    "id" : "jamesguo1112",
+    "type" : "user",
+    "uri" : "spotify:user:jamesguo1112"
+  },
+  "public" : true,
+  "snapshot_id" : "MWjI9Z30jfj1is3esD0Ujz1Sb3Guofy9bVOFP0BjRbC9pPC3yUA5/B5k8WSPcjqq",
+  "tracks" : {
+    "href" : "https://api.spotify.com/v1/users/jamesguo1112/playlists/3Vo5SI8JSKJwQh5erjbMLB/tracks?offset=0&limit=100",
+    "items" : [ {
+      "added_at" : "2017-05-08T01:26:20Z",
+      "added_by" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/jamesguo1112"
+        },
+        "href" : "https://api.spotify.com/v1/users/jamesguo1112",
+        "id" : "jamesguo1112",
+        "type" : "user",
+        "uri" : "spotify:user:jamesguo1112"
+      },
+      "is_local" : false,
+      "track" : {
+        "album" : {
+          "album_type" : "album",
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of"
+            },
+            "href" : "https://api.spotify.com/v1/artists/0LyfQWJT6nXafLPZqxe9Of",
+            "id" : "0LyfQWJT6nXafLPZqxe9Of",
+            "name" : "Various Artists",
+            "type" : "artist",
+            "uri" : "spotify:artist:0LyfQWJT6nXafLPZqxe9Of"
+          } ],
+          "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/album/1UEK7Ghs2N104M7vXkxcKa"
+          },
+          "href" : "https://api.spotify.com/v1/albums/1UEK7Ghs2N104M7vXkxcKa",
+          "id" : "1UEK7Ghs2N104M7vXkxcKa",
+          "images" : [ {
+            "height" : 640,
+            "url" : "https://i.scdn.co/image/555bb9cac021e031400ab9a4b23318062ed4fabc",
+            "width" : 640
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/2a9acb9e345029823adf774ebcda31bd145de0c8",
+            "width" : 300
+          }, {
+            "height" : 64,
+            "url" : "https://i.scdn.co/image/2b042b2fb5cf81585ad8c25b11759f16a5e959fc",
+            "width" : 64
+          } ],
+          "name" : "Ultra-Lounge Christmas Cocktails Vol. 3",
+          "type" : "album",
+          "uri" : "spotify:album:1UEK7Ghs2N104M7vXkxcKa"
+        },
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/2BFsBQuaspauXaT95x12Zw"
+          },
+          "href" : "https://api.spotify.com/v1/artists/2BFsBQuaspauXaT95x12Zw",
+          "id" : "2BFsBQuaspauXaT95x12Zw",
+          "name" : "Billy May & His Orchestra",
+          "type" : "artist",
+          "uri" : "spotify:artist:2BFsBQuaspauXaT95x12Zw"
+        }, {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/5Gejwv3xz2DpLcxVpMD6hL"
+          },
+          "href" : "https://api.spotify.com/v1/artists/5Gejwv3xz2DpLcxVpMD6hL",
+          "id" : "5Gejwv3xz2DpLcxVpMD6hL",
+          "name" : "Thurl Ravenscroft",
+          "type" : "artist",
+          "uri" : "spotify:artist:5Gejwv3xz2DpLcxVpMD6hL"
+        }, {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/6Gsao94MioGNcDLFGFAlw7"
+          },
+          "href" : "https://api.spotify.com/v1/artists/6Gsao94MioGNcDLFGFAlw7",
+          "id" : "6Gsao94MioGNcDLFGFAlw7",
+          "name" : "The King Sisters",
+          "type" : "artist",
+          "uri" : "spotify:artist:6Gsao94MioGNcDLFGFAlw7"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+        "disc_number" : 1,
+        "duration_ms" : 153586,
+        "explicit" : false,
+        "external_ids" : {
+          "isrc" : "USCA20401021"
+        },
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/77E0UrrGz9QYX7yVTVwGs7"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/77E0UrrGz9QYX7yVTVwGs7",
+        "id" : "77E0UrrGz9QYX7yVTVwGs7",
+        "name" : "Do You Believe in Santa Claus - feat. Thurl Ravenscroft and The King Sisters",
+        "popularity" : 3,
+        "preview_url" : "https://p.scdn.co/mp3-preview/7f3c062dd608b7d611dde3611adbb89ed9dff895?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 7,
+        "type" : "track",
+        "uri" : "spotify:track:77E0UrrGz9QYX7yVTVwGs7"
+      }
+    }, {
+      "added_at" : "2017-05-08T01:26:20Z",
+      "added_by" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/jamesguo1112"
+        },
+        "href" : "https://api.spotify.com/v1/users/jamesguo1112",
+        "id" : "jamesguo1112",
+        "type" : "user",
+        "uri" : "spotify:user:jamesguo1112"
+      },
+      "is_local" : false,
+      "track" : {
+        "album" : {
+          "album_type" : "album",
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of"
+            },
+            "href" : "https://api.spotify.com/v1/artists/0LyfQWJT6nXafLPZqxe9Of",
+            "id" : "0LyfQWJT6nXafLPZqxe9Of",
+            "name" : "Various Artists",
+            "type" : "artist",
+            "uri" : "spotify:artist:0LyfQWJT6nXafLPZqxe9Of"
+          } ],
+          "available_markets" : [ ],
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/album/7jSsNCbaAiGjsUvLV0AGwI"
+          },
+          "href" : "https://api.spotify.com/v1/albums/7jSsNCbaAiGjsUvLV0AGwI",
+          "id" : "7jSsNCbaAiGjsUvLV0AGwI",
+          "images" : [ {
+            "height" : 640,
+            "url" : "https://i.scdn.co/image/20189e64366001792d3a3dec97fa237a64f97906",
+            "width" : 640
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/82578d4d02399560c7b6553df8b3cdeb2ae0854a",
+            "width" : 300
+          }, {
+            "height" : 64,
+            "url" : "https://i.scdn.co/image/57774abb3c358c95894c6d50b0197635e5a0f3a0",
+            "width" : 64
+          } ],
+          "name" : "It's Chrismas time again",
+          "type" : "album",
+          "uri" : "spotify:album:7jSsNCbaAiGjsUvLV0AGwI"
+        },
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/5FNHfTn3yzVpqdUyWwej0v"
+          },
+          "href" : "https://api.spotify.com/v1/artists/5FNHfTn3yzVpqdUyWwej0v",
+          "id" : "5FNHfTn3yzVpqdUyWwej0v",
+          "name" : "Jimmy Durante",
+          "type" : "artist",
+          "uri" : "spotify:artist:5FNHfTn3yzVpqdUyWwej0v"
+        } ],
+        "available_markets" : [ ],
+        "disc_number" : 1,
+        "duration_ms" : 156932,
+        "explicit" : false,
+        "external_ids" : {
+          "isrc" : "USESK0619910"
+        },
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/3WwCV79BsKLsvhKtTVWQT6"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/3WwCV79BsKLsvhKtTVWQT6",
+        "id" : "3WwCV79BsKLsvhKtTVWQT6",
+        "name" : "Frosty The Snowman",
+        "popularity" : 0,
+        "preview_url" : null,
+        "track_number" : 10,
+        "type" : "track",
+        "uri" : "spotify:track:3WwCV79BsKLsvhKtTVWQT6"
+      }
+    }, {
+      "added_at" : "2017-05-08T01:26:20Z",
+      "added_by" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/jamesguo1112"
+        },
+        "href" : "https://api.spotify.com/v1/users/jamesguo1112",
+        "id" : "jamesguo1112",
+        "type" : "user",
+        "uri" : "spotify:user:jamesguo1112"
+      },
+      "is_local" : false,
+      "track" : {
+        "album" : {
+          "album_type" : "single",
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/1suIIDedjFJRuu8k7b55hZ"
+            },
+            "href" : "https://api.spotify.com/v1/artists/1suIIDedjFJRuu8k7b55hZ",
+            "id" : "1suIIDedjFJRuu8k7b55hZ",
+            "name" : "Gayla Peevey",
+            "type" : "artist",
+            "uri" : "spotify:artist:1suIIDedjFJRuu8k7b55hZ"
+          } ],
+          "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/album/2OmvgQ9op7SJhzIsiM7UHb"
+          },
+          "href" : "https://api.spotify.com/v1/albums/2OmvgQ9op7SJhzIsiM7UHb",
+          "id" : "2OmvgQ9op7SJhzIsiM7UHb",
+          "images" : [ {
+            "height" : 640,
+            "url" : "https://i.scdn.co/image/290478003c392bf54ad017ac14d1043b13c25203",
+            "width" : 640
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/f0e8d541c5b8f097e11f85b5132f3561aed0f5a7",
+            "width" : 300
+          }, {
+            "height" : 64,
+            "url" : "https://i.scdn.co/image/41f7253f370c714f8630a1bc213f503336a852ae",
+            "width" : 64
+          } ],
+          "name" : "I Want a Hippopotamus for Christmas - EP",
+          "type" : "album",
+          "uri" : "spotify:album:2OmvgQ9op7SJhzIsiM7UHb"
+        },
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/1suIIDedjFJRuu8k7b55hZ"
+          },
+          "href" : "https://api.spotify.com/v1/artists/1suIIDedjFJRuu8k7b55hZ",
+          "id" : "1suIIDedjFJRuu8k7b55hZ",
+          "name" : "Gayla Peevey",
+          "type" : "artist",
+          "uri" : "spotify:artist:1suIIDedjFJRuu8k7b55hZ"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "US", "UY" ],
+        "disc_number" : 1,
+        "duration_ms" : 166256,
+        "explicit" : false,
+        "external_ids" : {
+          "isrc" : "USA371535478"
+        },
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/1sMOb7YYRwnf7YKuOUHSBQ"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/1sMOb7YYRwnf7YKuOUHSBQ",
+        "id" : "1sMOb7YYRwnf7YKuOUHSBQ",
+        "name" : "77 Santas",
+        "popularity" : 6,
+        "preview_url" : "https://p.scdn.co/mp3-preview/d1f1a22415fce1d7e4fc832f1d3be519259b6ad7?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 3,
+        "type" : "track",
+        "uri" : "spotify:track:1sMOb7YYRwnf7YKuOUHSBQ"
+      }
+    }, {
+      "added_at" : "2017-05-08T01:26:20Z",
+      "added_by" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/jamesguo1112"
+        },
+        "href" : "https://api.spotify.com/v1/users/jamesguo1112",
+        "id" : "jamesguo1112",
+        "type" : "user",
+        "uri" : "spotify:user:jamesguo1112"
+      },
+      "is_local" : false,
+      "track" : {
+        "album" : {
+          "album_type" : "album",
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/4nZN9kln8toEzOifhWG2uF"
+            },
+            "href" : "https://api.spotify.com/v1/artists/4nZN9kln8toEzOifhWG2uF",
+            "id" : "4nZN9kln8toEzOifhWG2uF",
+            "name" : "Patti Page",
+            "type" : "artist",
+            "uri" : "spotify:artist:4nZN9kln8toEzOifhWG2uF"
+          } ],
+          "available_markets" : [ "AD", "AR", "AT", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HN", "HU", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "NI", "NL", "NO", "PA", "PE", "PL", "PT", "PY", "SE", "SK", "SV", "TR", "US", "UY" ],
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/album/5ucrXqzbzABOp8W7cJHBnS"
+          },
+          "href" : "https://api.spotify.com/v1/albums/5ucrXqzbzABOp8W7cJHBnS",
+          "id" : "5ucrXqzbzABOp8W7cJHBnS",
+          "images" : [ {
+            "height" : 640,
+            "url" : "https://i.scdn.co/image/45d2c40976ad1a5948ac023edd07274434d9e725",
+            "width" : 640
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/f982bda41f4f9015c49c55da81846f04307a66aa",
+            "width" : 300
+          }, {
+            "height" : 64,
+            "url" : "https://i.scdn.co/image/4dec29c87371ed7805ca30e196157fa44c160440",
+            "width" : 64
+          } ],
+          "name" : "Christmas With Patti Page",
+          "type" : "album",
+          "uri" : "spotify:album:5ucrXqzbzABOp8W7cJHBnS"
+        },
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/4nZN9kln8toEzOifhWG2uF"
+          },
+          "href" : "https://api.spotify.com/v1/artists/4nZN9kln8toEzOifhWG2uF",
+          "id" : "4nZN9kln8toEzOifhWG2uF",
+          "name" : "Patti Page",
+          "type" : "artist",
+          "uri" : "spotify:artist:4nZN9kln8toEzOifhWG2uF"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HN", "HU", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "NI", "NL", "NO", "PA", "PE", "PL", "PT", "PY", "SE", "SK", "SV", "TR", "US", "UY" ],
+        "disc_number" : 1,
+        "duration_ms" : 119706,
+        "explicit" : false,
+        "external_ids" : {
+          "isrc" : "USSM10028709"
+        },
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/34mPbSEDvpYstsqMDgNKc0"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/34mPbSEDvpYstsqMDgNKc0",
+        "id" : "34mPbSEDvpYstsqMDgNKc0",
+        "name" : "We Wish You a Merry Christmas",
+        "popularity" : 18,
+        "preview_url" : "https://p.scdn.co/mp3-preview/5357e92c3c48e7ace3501f2c1eae19ec33915a44?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 11,
+        "type" : "track",
+        "uri" : "spotify:track:34mPbSEDvpYstsqMDgNKc0"
+      }
+    }, {
+      "added_at" : "2017-05-08T01:26:20Z",
+      "added_by" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/jamesguo1112"
+        },
+        "href" : "https://api.spotify.com/v1/users/jamesguo1112",
+        "id" : "jamesguo1112",
+        "type" : "user",
+        "uri" : "spotify:user:jamesguo1112"
+      },
+      "is_local" : false,
+      "track" : {
+        "album" : {
+          "album_type" : "album",
+          "artists" : [ {
+            "external_urls" : {
+              "spotify" : "https://open.spotify.com/artist/0vQqxnQk1G32RtjSAFq3z1"
+            },
+            "href" : "https://api.spotify.com/v1/artists/0vQqxnQk1G32RtjSAFq3z1",
+            "id" : "0vQqxnQk1G32RtjSAFq3z1",
+            "name" : "Keely Smith",
+            "type" : "artist",
+            "uri" : "spotify:artist:0vQqxnQk1G32RtjSAFq3z1"
+          } ],
+          "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "UY" ],
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/album/2dgX3nruhn6jeR3ICsLICY"
+          },
+          "href" : "https://api.spotify.com/v1/albums/2dgX3nruhn6jeR3ICsLICY",
+          "id" : "2dgX3nruhn6jeR3ICsLICY",
+          "images" : [ {
+            "height" : 640,
+            "url" : "https://i.scdn.co/image/4fd7b99b830119d1d450412d60dc2fd6a31bf158",
+            "width" : 640
+          }, {
+            "height" : 300,
+            "url" : "https://i.scdn.co/image/e67c0f14f7c6977184c375bc8c910d748208815c",
+            "width" : 300
+          }, {
+            "height" : 64,
+            "url" : "https://i.scdn.co/image/fdc63b0241f6dfe1f81c699d3c842adf66b739c9",
+            "width" : 64
+          } ],
+          "name" : "Christmas & Holiday Classics",
+          "type" : "album",
+          "uri" : "spotify:album:2dgX3nruhn6jeR3ICsLICY"
+        },
+        "artists" : [ {
+          "external_urls" : {
+            "spotify" : "https://open.spotify.com/artist/0vQqxnQk1G32RtjSAFq3z1"
+          },
+          "href" : "https://api.spotify.com/v1/artists/0vQqxnQk1G32RtjSAFq3z1",
+          "id" : "0vQqxnQk1G32RtjSAFq3z1",
+          "name" : "Keely Smith",
+          "type" : "artist",
+          "uri" : "spotify:artist:0vQqxnQk1G32RtjSAFq3z1"
+        } ],
+        "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "SE", "SG", "SK", "SV", "TR", "TW", "UY" ],
+        "disc_number" : 1,
+        "duration_ms" : 148306,
+        "explicit" : false,
+        "external_ids" : {
+          "isrc" : "USA561402606"
+        },
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/track/1WupJDGRh3OpbQf5CCxG6l"
+        },
+        "href" : "https://api.spotify.com/v1/tracks/1WupJDGRh3OpbQf5CCxG6l",
+        "id" : "1WupJDGRh3OpbQf5CCxG6l",
+        "name" : "Christmas Island",
+        "popularity" : 0,
+        "preview_url" : "https://p.scdn.co/mp3-preview/2b63914d6d9df8e8054c7447f6b72f9a07494106?cid=8897482848704f2a8f8d7c79726a70d4",
+        "track_number" : 10,
+        "type" : "track",
+        "uri" : "spotify:track:1WupJDGRh3OpbQf5CCxG6l"
+      }
+    } ],
+    "limit" : 100,
+    "next" : null,
+    "offset" : 0,
+    "previous" : null,
+    "total" : 5
+  },
+  "type" : "playlist",
+  "uri" : "spotify:user:jamesguo1112:playlist:3Vo5SI8JSKJwQh5erjbMLB"
+}

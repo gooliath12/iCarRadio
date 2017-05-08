@@ -1,7 +1,8 @@
-import boto
+import boto, os
 
 # Get Identity Pool and Role information
-with open('./utils/aws_identity.txt') as keyfile:
+keyfilename = os.path.join(os.path.dirname(__file__)+'/utils/', 'aws_identity.txt')
+with open(keyfilename) as keyfile:
     keys = keyfile.readlines()
     ACCOUNT_ID = keys[0].strip('\n').split()[2]
     IDENTITY_POOL_ID = keys[1].strip('\n').split()[2]

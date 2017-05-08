@@ -24,4 +24,8 @@ def getTraffic(coordinates=['40.7128, -74.0059,1']):
     print freeFlow
     # print text
     '''
-    return direction, jamFactor, speed, freeFlow
+    # return direction, jamFactor, speed, freeFlow
+    return jamFactor
+
+if __name__ == '__main__':
+    getTraffic()

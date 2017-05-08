@@ -8,16 +8,16 @@ exports.handler = function(event, context) {
 
   // ML Model 1:  energy
   var endpointUrl_1 = 'https://realtime.machinelearning.us-east-1.amazonaws.com';
-  var mlModelId_1 = 'ml-R7gmht1112F';
+  var mlModelId_1 = 'ml-8Vr2ZZFUPIX';
   // ML Model 2: acousticness
   var endpointUrl_2 = 'https://realtime.machinelearning.us-east-1.amazonaws.com';
-  var mlModelId_2 = 'ml-4jKUIZeY5iu';
+  var mlModelId_2 = 'ml-9RsQi45MZZ4';
   // ML Model 3: genre
   var endpointUrl_3 = 'https://realtime.machinelearning.us-east-1.amazonaws.com';
-  var mlModelId_3 = 'ml-HU3pO2ZMbOD';
+  var mlModelId_3 = 'ml-6yHyQmyr2hf';
   // ML Model 4: valence
   var endpointUrl_4 = 'https://realtime.machinelearning.us-east-1.amazonaws.com';
-  var mlModelId_4 = 'ml-7VEoNtBhFyY';
+  var mlModelId_4 = 'ml-Fdm8D2XYsgT';
   
   var snsTopicArn = 'arn:aws:sns:us-east-1:965479193052:iCarRadio';
   var snsMessageSubject = 'AML Prediction Result';
